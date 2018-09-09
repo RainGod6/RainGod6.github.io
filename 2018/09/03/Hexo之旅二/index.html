@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="本地环境准备Hexo是基于Node.js的,然后我们需要用git来管理代码，所以需要安装Node.js和git 安装Node.js(Node.js安装)[https://nodejs.org/en/] 直接官网下载，一路next即可 安装Git(Git安装)[https://git-scm.com/] 同样也是官网下载，一路next完成安装如果你的电脑已经安装这两种必备程序，那么你接下来可以直接使">
+<meta name="keywords" content="Hexo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo之旅(二):博客搭建于Windows">
+<meta property="og:url" content="http://yoursite.com/2018/09/03/Hexo之旅二/index.html">
+<meta property="og:site_name" content="小雨滴测试小白之路">
+<meta property="og:description" content="本地环境准备Hexo是基于Node.js的,然后我们需要用git来管理代码，所以需要安装Node.js和git 安装Node.js(Node.js安装)[https://nodejs.org/en/] 直接官网下载，一路next即可 安装Git(Git安装)[https://git-scm.com/] 同样也是官网下载，一路next完成安装如果你的电脑已经安装这两种必备程序，那么你接下来可以直接使">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2018/09/03/Hexo之旅二/new_repository.png">
+<meta property="og:image" content="http://yoursite.com/2018/09/03/Hexo之旅二/new_respository1.png">
+<meta property="og:image" content="http://yoursite.com/2018/09/03/Hexo之旅二/new_respository2.png">
+<meta property="og:image" content="http://yoursite.com/2018/09/03/Hexo之旅二/ssh_key.png">
+<meta property="og:updated_time" content="2018-09-09T12:33:12.746Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo之旅(二):博客搭建于Windows">
+<meta name="twitter:description" content="本地环境准备Hexo是基于Node.js的,然后我们需要用git来管理代码，所以需要安装Node.js和git 安装Node.js(Node.js安装)[https://nodejs.org/en/] 直接官网下载，一路next即可 安装Git(Git安装)[https://git-scm.com/] 同样也是官网下载，一路next完成安装如果你的电脑已经安装这两种必备程序，那么你接下来可以直接使">
+<meta name="twitter:image" content="http://yoursite.com/2018/09/03/Hexo之旅二/new_repository.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/09/03/Hexo之旅二/"/>
+
+
+
+
+
+  <title>Hexo之旅(二):博客搭建于Windows | 小雨滴测试小白之路</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">小雨滴测试小白之路</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/03/Hexo之旅二/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="小雨滴(LongYu)">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雨滴测试小白之路">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Hexo之旅(二):博客搭建于Windows</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-03T21:24:02+08:00">
+                2018-09-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">Hexo</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="本地环境准备"><a href="#本地环境准备" class="headerlink" title="本地环境准备"></a>本地环境准备</h1><p>Hexo是基于Node.js的,然后我们需要用git来管理代码，所以需要安装Node.js和git</p>
+<h2 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h2><p>(Node.js安装)[<a href="https://nodejs.org/en/]" target="_blank" rel="noopener">https://nodejs.org/en/]</a> 直接官网下载，一路next即可</p>
+<h2 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h2><p>(Git安装)[<a href="https://git-scm.com/]" target="_blank" rel="noopener">https://git-scm.com/]</a> 同样也是官网下载，一路next完成安装<br>如果你的电脑已经安装这两种必备程序，那么你接下来可以直接使用npm命令完成Hexo的安装</p>
+<h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><p>所有必备的应用程序安装完成后，即可使用 npm 安装 Hexo：<br><code>$ npm install -g hexo-cli</code><br>-g 或 –global 表示全局安装模块，如果没有这个参数，会安装在当前目录的node_modules子目录下。<br>安装 Hexo 完成后，请执行下列命令，Hexo 将会在指定文件夹中新建所需要的文件。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init &lt;folder&gt;</span><br><span class="line">$ cd &lt;folder&gt;</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p><code>npm install</code> 表示安装当前目录package.json文件中配置的dependencies模块。</p>
+<h2 id="更新Hexo"><a href="#更新Hexo" class="headerlink" title="更新Hexo"></a>更新Hexo</h2><p>官方发布了新版本之后，可以用以下命令在hexo建立的博客目录运行即可更新：<br><code>1 $ npm update</code><br>用如下命令可以检查package.json文件中配置的dependencies的版本号：<br><code>$ npm ls --depth=0</code></p>
+<h2 id="部署Hexo"><a href="#部署Hexo" class="headerlink" title="部署Hexo"></a>部署Hexo</h2><p>Hexo 3.0版本需要单独安装发布器插件，检查博客目录的node_modules中有没有hexo-deployer-git文件夹，若没有，执行以下命令安装：<br><code>$ npm install hexo-deployer-git --save</code><br>然后修改Hexo下的 _config.yml中的部署相关的配置文件:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git ##部署类型，其它类型自行google之</span><br><span class="line">  repo: &lt;repository url&gt; ##git仓库地址 (git@github.com:username.github.io.git)类似这样的地址,第二节会讲</span><br><span class="line">  branch: [branch] ##git 页面分支（一般选择master）</span><br><span class="line">  message: [message] ##git message建议默认字段update 可以自定义</span><br></pre></td></tr></table></figure></p>
+<h2 id="运行Hexo"><a href="#运行Hexo" class="headerlink" title="运行Hexo"></a>运行Hexo</h2><p>到现在，一个 Hexo 博客已经搭建起来了，你可以在本地运行，也后面我们会讲如何将本地的怎么部署在Github上。<br>执行下面的命令就可以在本地运行一个 Hexo 博客了。<br><code>$ hexo server 或者 hexo s</code><br>然后在本地浏览器打开(<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a>) 即可</p>
+<h1 id="Git-Pages-服务准备"><a href="#Git-Pages-服务准备" class="headerlink" title="Git Pages 服务准备"></a>Git Pages 服务准备</h1><p>Pages服务，它是一切静态博客的基础。我们之所以能够使用Github、GitCafe等代码托管站来托管我们的博客，是因为他们提供了Pages服务。来看GitCafe上的介绍。</p>
+<blockquote>
+<p>GitCafe Pages 是一项公众网页托管和发布服务。你可以使用 GitCafe Pages 托管博客、项目官网一类的静态网页，支持绑定自定义域名。<br>GitCafe Pages 支持用户 Pages 服务和项目 Pages 服务。用户 Pages 可以通过 user_name.gitcafe.io 形式的 URL 直接访问，适合用作个人或组织的静态博客或网站；项目 Pages 需通过user_name.gitcafe.io/project_name形式的 URL 访问，更适合托管项目的官网或博客。</p>
+</blockquote>
+<h2 id="创建Github项目"><a href="#创建Github项目" class="headerlink" title="创建Github项目"></a>创建Github项目</h2><p>这里只以Github为例，GitCafe是类似的。<br>如果还没有Github账号，先去注册一个吧(<a href="https://github.com）" target="_blank" rel="noopener">https://github.com）</a><br>用刚刚注册的 Github 账号登录，然后在点击页面右上角的加号，在弹出菜单中点击New Repository，如图所示<br><img src="/2018/09/03/Hexo之旅二/new_repository.png" alt=""><br>然后会跳转到一个新建库(Create new repository)的页面，在Repository name一栏填[your_username].github.io，[your_username]是你 Github 上的用户名，请务必按照此格式填写，否则无法在 Github 上部署博客。然后点击 Create repository 按钮提交。<br><img src="/2018/09/03/Hexo之旅二/new_respository1.png" alt=""><br>如果一切顺利会出现一个页面，有一个 SSH 地址，形如<a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:[your_username]/[your_username].github.io.git，上面提到的就是这个。（这里会有两种形式的地址，一种是HTTPS的，一种是SSH的，我们用SSH形式的）。<br><img src="/2018/09/03/Hexo之旅二/new_respository2.png" alt=""></p>
+<h2 id="添加SSH公钥"><a href="#添加SSH公钥" class="headerlink" title="添加SSH公钥"></a>添加SSH公钥</h2><p>为了保证安全，以及不用每次输入git密码，我们可以在Github上添加 SSH 公钥。<br>SSH 密钥的创建需要在终端（命令行）环境下进行，我们首先进入命令行环境。通常在 Mac OS X 和 Linux 平台下我们使用终端工具（Terminal），在 Windows 平台中，可以使用 Git Bash 工具。</p>
+<h3 id="在-Windows-平台中-Git-Bash添加"><a href="#在-Windows-平台中-Git-Bash添加" class="headerlink" title="在 Windows 平台中,Git Bash添加"></a>在 Windows 平台中,Git Bash添加</h3><p>第一步，打开Git Bash GUI界面，选择help，点击show SSH key,然后点击Generate Key，然后就会自动生成。<br>第二步，将生成的key添加至GitHub：<br>进入Git主页，选择settings,会看到一栏 SSH and GPG Keys 菜单，点击进入，如下图所示：<br><img src="/2018/09/03/Hexo之旅二/ssh_key.png" alt=""><br>然后点击New SSH key，将刚刚生成的key复制到这来添加，保存即可。<br>第三步，将github的地址添加至本机hosts文件中：<br>(13.229.188.59 github.com)添加至文件末尾  ##hosts文件目录：C:\Windows\System32\drivers\etc</p>
+<h2 id="部署本地文件至github"><a href="#部署本地文件至github" class="headerlink" title="部署本地文件至github"></a>部署本地文件至github</h2><p>本地的文章，修改之后需要用到以下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean ## 清除缓存，刷新最新修改的资源</span><br><span class="line">$ hexo s  ## 本地启动服务查看资源是否正确</span><br><span class="line">$ hexo deploy  ## 将本地文件部署至Git</span><br></pre></td></tr></table></figure></p>
+<h3 id="访问博客"><a href="#访问博客" class="headerlink" title="访问博客"></a>访问博客</h3><p>接下来就可以真正的访问你的博客了，只需要在浏览器输入github生成的地址即可：<a href="https://username.github.io" target="_blank" rel="noopener">https://username.github.io</a></p>
+<h1 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h1><p>搭建一个 Hexo 博客还是很简单的，当然现在的运行起来的只是一个博客的默认的样子，我们需要更多的个性化，来把它真正地变成我们的个人博客。下篇文章将介绍NexT主题。</p>
+<p>(本片文章参考Hexo官方文档)[<a href="https://hexo.io/zh-cn/]" target="_blank" rel="noopener">https://hexo.io/zh-cn/]</a>  # hexo详细使用可以去官方网站进行详细查看及了解！</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/01/你好，Hexo/" rel="next" title="Hexo之旅(一)：博客之恋">
+                <i class="fa fa-chevron-left"></i> Hexo之旅(一)：博客之恋
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/09/Hexo之旅-三/" rel="prev" title="Hexo之旅(三)：Hexo NexT主题">
+                Hexo之旅(三)：Hexo NexT主题 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.gif"
+                alt="小雨滴(LongYu)" />
+            
+              <p class="site-author-name" itemprop="name">小雨滴(LongYu)</p>
+              <p class="site-description motion-element" itemprop="description">学习是一个持续的过程，努力坚持你总会有收获！</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#本地环境准备"><span class="nav-number">1.</span> <span class="nav-text">本地环境准备</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Node-js"><span class="nav-number">1.1.</span> <span class="nav-text">安装Node.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Git"><span class="nav-number">1.2.</span> <span class="nav-text">安装Git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Hexo"><span class="nav-number">1.3.</span> <span class="nav-text">安装Hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更新Hexo"><span class="nav-number">1.4.</span> <span class="nav-text">更新Hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#部署Hexo"><span class="nav-number">1.5.</span> <span class="nav-text">部署Hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运行Hexo"><span class="nav-number">1.6.</span> <span class="nav-text">运行Hexo</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Git-Pages-服务准备"><span class="nav-number">2.</span> <span class="nav-text">Git Pages 服务准备</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建Github项目"><span class="nav-number">2.1.</span> <span class="nav-text">创建Github项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加SSH公钥"><span class="nav-number">2.2.</span> <span class="nav-text">添加SSH公钥</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#在-Windows-平台中-Git-Bash添加"><span class="nav-number">2.2.1.</span> <span class="nav-text">在 Windows 平台中,Git Bash添加</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#部署本地文件至github"><span class="nav-number">2.3.</span> <span class="nav-text">部署本地文件至github</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#访问博客"><span class="nav-number">2.3.1.</span> <span class="nav-text">访问博客</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#结尾"><span class="nav-number">3.</span> <span class="nav-text">结尾</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">小雨滴(LongYu)</span>
+
+  
+</div>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
